@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <!-- begin #page-loader -->
-    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <div id="page-loader" class="fade in hide"><span class="spinner"></span></div>
     <!-- end #page-loader -->
     <!--<img src="./assets/logo.png">-->
     <!-- begin #page-container -->
-	  <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+	  <div id="page-container" class="fade page-sidebar-fixed page-header-fixed  in active">
+    <page-header></page-header>
     <transition name="router-fade" mode="out-in">
     		<router-view></router-view>
     </transition>
@@ -15,8 +16,13 @@
 </template>
 
 <script>
+// import   "./assets/plugins/pace/pace.min.js"
+import pageHeader from './components/page/header'
 export default {
-  name: 'app'
+  name: 'app',
+  components: { pageHeader },
+  mounted () {
+  }
 }
 </script>
 
@@ -25,7 +31,7 @@ export default {
 @import "./assets/plugins/bootstrap/css/bootstrap.min.css";
 @import "./assets/plugins/font-awesome/css/font-awesome.min.css";
 @import "./assets/css/animate.min.css";
-@import "./assets/css/style.min.css";
+@import "./assets/css/style.css";
 @import "./assets/css/style-responsive.min.css";
 @import "./assets/css/theme/default.css";
 
