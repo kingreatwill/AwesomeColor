@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <!-- begin #page-loader -->
-    <div id="page-loader" class="fade in hide"><span class="spinner"></span></div>
-    <!-- end #page-loader -->
+    <page-loader></page-loader>
     <!--<img src="./assets/logo.png">-->
     <!-- begin #page-container -->
 	  <div id="page-container" class="fade page-sidebar-fixed page-header-fixed  in active">
@@ -16,13 +14,21 @@
 </template>
 
 <script>
-// import   "./assets/plugins/pace/pace.min.js"
-import pageHeader from './components/page/header'
+import {mapState, mapMutations} from 'vuex'
+// import "./assets/plugins/jquery/jquery-1.9.1.min.js"
+import {pageHeader,pageLoader} from './components/page/export.js'
 export default {
   name: 'app',
-  components: { pageHeader },
+  components: { pageHeader,pageLoader },
+  created(){},
   mounted () {
-  }
+    this.APP_LOADDING(true);
+  },
+  methods: {
+       ...mapMutations([
+            'APP_LOADDING'
+        ]),
+  },
 }
 </script>
 

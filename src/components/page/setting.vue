@@ -79,7 +79,7 @@
 
 <script>
 export default {
-  name: 'theme-setting',
+  name: 'page-setting',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
